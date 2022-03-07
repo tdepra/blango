@@ -28,6 +28,8 @@ class Dev(Configuration):
   # SECURITY WARNING: don't run with debug turned on in production!
   DEBUG = values.BooleanValue(True)
 
+  AUTH_USER_MODEL = "blango_auth.User"
+
   #ALLOWED_HOSTS = ['*']
   ALLOWED_HOSTS = values.ListValue(["localhost", "0.0.0.0", ".codio.io"])
   X_FRAME_OPTIONS = 'ALLOW-FROM ' + os.environ.get('CODIO_HOSTNAME') + '-8000.codio.io'
@@ -50,6 +52,7 @@ class Dev(Configuration):
       'crispy_forms',
       'crispy_bootstrap5',
       'debug_toolbar',
+      'blango_auth',
       'blog',
   ]
 
